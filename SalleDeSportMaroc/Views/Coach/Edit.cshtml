@@ -1,0 +1,20 @@
+﻿@model SalleDeSportMaroc.Models.Coach
+
+<h2>Modifier le Coach</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="Nom"></label>
+        <input asp-for="Nom" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="Specialite"></label>
+        <input asp-for="Specialite" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="PhotoUrl"></label>
+        <input asp-for="PhotoUrl" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-warning">Modifier</button>
+</form>

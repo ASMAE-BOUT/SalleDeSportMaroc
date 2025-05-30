@@ -1,0 +1,60 @@
+﻿@page
+@model PersonalDataModel
+@{
+    ViewData["Title"] = "Données personnelles";
+    ViewData["ActivePage"] = ManageNavPages.PersonalData;
+    // Layout = "~/Areas/Identity/Pages/_Layout.cshtml";
+}
+
+<h3>@ViewData["Title"]</h3>
+
+<div class="row">
+    <div class="col-md-6">
+        <p>Votre compte contient des données personnelles que vous nous avez fournies. Cette page vous permet de télécharger ou supprimer ces données.</p>
+        <p>
+            <strong>La suppression de ces données supprimera définitivement votre compte, et cela ne pourra pas être récupéré.</strong>
+        </p>
+        <div class="d-flex gap-2">
+            <!-- Utilisation de d-flex pour aligner les boutons côte à côte avec un espacement -->
+            <form id="download-data" asp-page="DownloadPersonalData" method="post">
+                <button class="btn btn-dark-orange" type="submit">Télécharger</button>
+            </form>
+            <a id="delete" asp-page="DeletePersonalData" class="btn btn-danger">Supprimer</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .btn-dark-orange {
+        background-color: #FF9900; /* Orange vif */
+        color: black; /* Texte noir */
+        border: none;
+        padding: 12px 20px; /* Padding accru pour un look audacieux */
+        border-radius: 8px; /* Coins arrondis */
+        font-weight: bold; /* Texte en gras pour l'accentuation */
+        transition: background-color 0.3s; /* Effet de survol fluide */
+    }
+
+        .btn-dark-orange:hover {
+            background-color: #E64A19; /* Orange légèrement plus clair au survol */
+            color: black; /* Maintenir le texte noir */
+        }
+
+    .btn-danger {
+        background-color: #dc3545; /* Rouge pour supprimer */
+        color: white;
+        padding: 12px 20px; /* Padding accru */
+        border-radius: 8px; /* Coins arrondis */
+        font-weight: bold; /* Texte en gras */
+        transition: background-color 0.3s; /* Effet de survol */
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333; /* Rouge plus foncé au survol */
+            color: white;
+        }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

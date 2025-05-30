@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Réserver une Séance d'Essai";
+}
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h2 class="fw-bold">🎟️ Réservez Votre Séance d'Essai</h2>
+        <p class="text-muted">
+            Profitez d'une séance d'essai gratuite et découvrez nos cours avant de vous abonner.
+        </p>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Nom Complet</label>
+                    <input type="text" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Choisissez un cours</label>
+                    <select class="form-select">
+                        <option>Yoga & Relaxation</option>
+                        <option>CrossFit Intensif</option>
+                        <option>Zumba Énergique</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-warning btn-lg w-100">📅 Confirmer ma réservation</button>
+            </form>
+        </div>
+    </div>
+</div>

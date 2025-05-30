@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Nos Cours";
+}
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h2 class="fw-bold">📚 Découvrez Nos Cours</h2>
+        <p class="text-muted">
+            Explorez notre gamme variée de cours, adaptés à tous les niveaux, du débutant à l'expert.
+        </p>
+    </div>
+
+    <!-- 🏋️‍♂️ Section d'introduction avec image -->
+    <div class="row align-items-center mt-4">
+        <div class="col-md-6">
+            <img src="~/images/cours-collectifs.jpg" class="img-fluid rounded shadow" alt="Cours collectifs">
+        </div>
+        <div class="col-md-6">
+            <h3 class="fw-bold">🏋️‍♂️ Entraînez-vous avec les meilleurs</h3>
+            <p>
+                Nos cours collectifs sont conçus pour booster votre énergie et vous aider à atteindre vos objectifs.
+                Nos coachs professionnels vous guideront à chaque étape.
+            </p>
+            <ul class="list-unstyled">
+                <li>✅ Programmes adaptés à tous les niveaux</li>
+                <li>✅ Suivi personnalisé avec nos coachs</li>
+                <li>✅ Accès libre ou abonnement spécifique</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <!-- 🎯 Liste des cours -->
+    <div class="text-center">
+        <h3 class="fw-bold">🔥 Nos Cours Disponibles</h3>
+    </div>
+
+    <div class="row mt-4">
+        <!-- 🧘 Yoga -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="~/images/yoga.jpg" class="card-img-top" alt="Yoga">
+                <div class="card-body text-center">
+                    <h5 class="card-title">🧘 Yoga & Relaxation</h5>
+                    <p class="card-text">Un cours apaisant pour améliorer votre souplesse et réduire le stress.</p>
+                    <a href="@Url.Action("Reservation", "Cours")" class="btn btn-warning">🎟️ Séance d'essai offerte</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 💪 CrossFit -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="~/images/crossfit.jpg" class="card-img-top" alt="CrossFit">
+                <div class="card-body text-center">
+                    <h5 class="card-title">💪 CrossFit Intensif</h5>
+                    <p class="card-text">Des exercices explosifs pour brûler un maximum de calories et gagner en force.</p>
+                    <a href="@Url.Action("Reservation", "Cours")" class="btn btn-warning">🎟️ Séance d'essai offerte</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🕺 Zumba -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="~/images/zumba.jpg" class="card-img-top" alt="Zumba">
+                <div class="card-body text-center">
+                    <h5 class="card-title">🕺 Zumba Énergique</h5>
+                    <p class="card-text">Dansez et amusez-vous tout en brûlant des calories avec nos cours de Zumba !</p>
+                    <a href="@Url.Action("Reservation", "Cours")" class="btn btn-warning">🎟️ Séance d'essai offerte</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Inscription";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <h2>Créez un nouveau compte.</h2>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert">
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    <ul>
+                        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <li>@error.ErrorMessage</li>
+                        }
+                    </ul>
+                }
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="nom@exemple.com" />
+                <label asp-for="Input.Email">Adresse e-mail</label>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="mot de passe" />
+                <label asp-for="Input.Password">Mot de passe</label>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="mot de passe" />
+                <label asp-for="Input.ConfirmPassword">Confirmer le mot de passe</label>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-dark-orange">S'inscrire</button>
+        </form>
+    </div>
+    <div class="col-md-6 col-md-offset-2">
+        <section>
+            <h3>Utilisez un autre service pour vous inscrire.</h3>
+            <hr />
+            @{
+                if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                {
+                    <div>
+                        <p>
+                            Aucun service d'authentification externe n'est configuré. Consultez cet <a href="https://go.microsoft.com/fwlink/?LinkID=532715">
+                                article
+                                sur la configuration de cette application ASP.NET pour permettre l'inscription via des services externes
+                            </a>.
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <div>
+                            <p>
+                                @foreach (var provider in Model.ExternalLogins!)
+                                {
+                                    <button type="submit" class="btn btn-dark-orange" name="provider" value="@provider.Name" title="S'inscrire avec votre compte @provider.DisplayName">@provider.DisplayName</button>
+                                }
+                            </p>
+                        </div>
+                    </form>
+                }
+            }
+        </section>
+    </div>
+</div>
+
+<style>
+    .btn-dark-orange {
+        background-color: #FF9900; /* Orange vif */
+        color: black; /* Texte noir */
+        border: none;
+        padding: 12px 20px; /* Padding accru pour un look audacieux */
+        border-radius: 8px; /* Coins arrondis */
+        font-weight: bold; /* Texte en gras pour l'accentuation */
+        transition: background-color 0.3s; /* Effet de survol fluide */
+        margin-right: 10px; /* Espacement entre les boutons de connexion externe */
+    }
+
+        .btn-dark-orange:hover {
+            background-color: #E64A19; /* Orange légèrement plus clair au survol */
+            color: black; /* Maintenir le texte noir */
+        }
+
+    .form-floating label {
+        color: #333; /* Texte des labels plus sombre pour le contraste */
+    }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

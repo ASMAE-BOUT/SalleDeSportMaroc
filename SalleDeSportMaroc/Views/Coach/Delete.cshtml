@@ -1,0 +1,10 @@
+﻿@model SalleDeSportMaroc.Models.Coach
+
+<h2>Supprimer le Coach</h2>
+<p>Êtes-vous sûr de vouloir supprimer @Model.Nom ?</p>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Oui, Supprimer</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

@@ -1,0 +1,55 @@
+﻿@model SalleDeSportMaroc.Areas.Admin.Controllers.EditAbsenceViewModel
+
+@{
+    ViewData["Title"] = "Modifier une Absence";
+}
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h2 class="fw-bold text-dark">✏️ Modifier une Absence</h2>
+        <p class="text-muted">Modifiez les informations de l'absence.</p>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm p-4">
+                <form asp-action="EditAbsence" method="post">
+                    <input type="hidden" asp-for="Id" />
+
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label">Nom</label>
+                        <input asp-for="Name" class="form-control" required />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Type" class="form-label">Type</label>
+                        <select asp-for="Type" class="form-control" required>
+                            <option value="Membre">Membre</option>
+                            <option value="Coach">Coach</option>
+                        </select>
+                        <span asp-validation-for="Type" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Date" class="form-label">Date</label>
+                        <input asp-for="Date" type="date" class="form-control" required />
+                        <span asp-validation-for="Date" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Reason" class="form-label">Raison</label>
+                        <textarea asp-for="Reason" class="form-control" required></textarea>
+                        <span asp-validation-for="Reason" class="text-danger"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-warning w-100">Enregistrer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

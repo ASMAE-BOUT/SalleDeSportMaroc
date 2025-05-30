@@ -1,0 +1,36 @@
+﻿@model SalleDeSportMaroc.Models.Coach
+
+@{
+    ViewData["Title"] = Model.Nom;
+}
+
+<div class="card">
+    <img src="@Model.PhotoUrl" class="card-img-top" alt="@Model.Nom">
+    <div class="card-body">
+        <h3>@Model.Nom</h3>
+        <p><strong>Spécialité :</strong> @Model.Specialite</p>
+
+        @if (Model.Nom == "Youssef El Amrani")
+        {
+            <p>🏋️‍♂️ Youssef El Amrani est un passionné de musculation et de cardio depuis plus de 12 ans. Ancien compétiteur en bodybuilding, il a décidé de partager son expérience en devenant coach personnel.</p>
+            <p>Il met un point d'honneur à aider ses clients à atteindre leurs objectifs physiques, que ce soit la prise de masse, la perte de poids ou l'amélioration de l'endurance cardiovasculaire.</p>
+        }
+        else if (Model.Nom == "Sara Bennani")
+        {
+            <p>🧘‍♀️ Sara Bennani est une experte en bien-être et relaxation. Diplômée en Yoga Vinyasa & Pilates, elle a perfectionné son enseignement en Inde avant de revenir au Maroc pour partager ses connaissances.</p>
+            <p>Elle combine respiration contrôlée, méditation et mouvements fluides pour améliorer la posture et réduire le stress.</p>
+        }
+        else if (Model.Nom == "Khalid Ouchen")
+        {
+            <p>🏋️‍♂️ Khalid Ouchen est un passionné d'entraînements intensifs et explosifs. Ancien athlète de CrossFit, il est réputé pour ses entraînements qui repoussent les limites de l'endurance et de la force.</p>
+            <p>Il utilise des séances de HIIT, haltérophilie, circuits fonctionnels pour améliorer force, agilité et endurance.</p>
+        }
+        else if (Model.Nom == "Fatima Zahra Idrissi")
+        {
+            <p>💃 Fatima Zahra Idrissi est une danseuse et coach spécialisée en Zumba, Danse Latine et Afrobeat. Depuis son plus jeune âge, elle pratique la danse comme un moyen d’expression et de bien-être.</p>
+            <p>Elle propose des cours dynamiques où l’on brûle jusqu'à 600 calories en une heure, tout en s’amusant au rythme de la musique.</p>
+        }
+
+        <a asp-action="Index" class="btn btn-warning">Retour</a>
+    </div>
+</div>

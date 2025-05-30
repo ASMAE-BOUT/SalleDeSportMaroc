@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Espace Admin - Tableau de Bord";
+}
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h2 class="fw-bold text-dark">🖥️ Espace Admin de MarocActive</h2>
+        <p class="text-muted">Gérez les séances, les membres et les absences du centre sportif.</p>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm text-center">
+                <div class="card-body">
+                    <h3 class="fw-bold text-dark">📅 Gérer les Séances</h3>
+                    <p class="text-muted">Planifiez et modifiez les séances d’activités sportives.</p>
+                    <a asp-action="ManageSessions" class="btn btn-warning">Accéder</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm text-center">
+                <div class="card-body">
+                    <h3 class="fw-bold text-dark">👥 Gérer les Membres</h3>
+                    <p class="text-muted">Consultez et gérez les informations des membres.</p>
+                    <a asp-action="ManageMembers" class="btn btn-warning">Accéder</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm text-center">
+                <div class="card-body">
+                    <h3 class="fw-bold text-dark">🚫 Gérer les Absences</h3>
+                    <p class="text-muted">Suivez les absences des membres et des coachs.</p>
+                    <a asp-action="ManageAbsences" class="btn btn-warning">Accéder</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,120 @@
+﻿@{
+    ViewData["Title"] = "Nos Abonnements";
+}
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h2 class="fw-bold">📅 Nos Offres d'Abonnement</h2>
+        <p class="lead">Trouvez la formule qui vous convient et profitez d’un accès illimité à notre salle de sport MarocActive !</p>
+    </div>
+
+    <!-- Image -->
+    <div class="text-center my-4">
+        <img src="/images/abonnement-banner.jpg" class="img-fluid rounded shadow" alt="Abonnements Salle de Sport">
+    </div>
+
+    <hr class="my-5">
+
+    <!-- Offres d'abonnement sous forme de cartes -->
+    <div class="row text-center">
+        <div class="col-md-4">
+            <div class="card shadow p-3">
+                <h3 class="fw-bold text-primary">🟢 Mensuel</h3>
+                <p class="lead">250 MAD</p>
+                <ul class="list-unstyled">
+                    <li>✅ Accès illimité</li>
+                    <li>✅ Cours collectifs inclus</li>
+                    <li>❌ Coaching personnalisé</li>
+                </ul>
+                <a href="@Url.Action("FormulaireAbonnement", "Abonnement", new { type = "Mensuel" })" class="btn btn-warning btn-block">
+                    S'abonner
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow p-3">
+                <h3 class="fw-bold text-success">🔵 Trimestriel</h3>
+                <p class="lead">700 MAD</p>
+                <ul class="list-unstyled">
+                    <li>✅ Accès illimité</li>
+                    <li>✅ Cours collectifs inclus</li>
+                    <li>✅ 2 séances de coaching</li>
+                </ul>
+                <a href="@Url.Action("FormulaireAbonnement", "Abonnement", new { type = "Trimestriel" })" class="btn btn-warning btn-block">
+                    S'abonner
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow p-3">
+                <h3 class="fw-bold text-danger">🏆 Annuel</h3>
+                <p class="lead">2500 MAD</p>
+                <ul class="list-unstyled">
+                    <li>✅ Accès illimité</li>
+                    <li>✅ Cours collectifs inclus</li>
+                    <li>✅ Coaching personnalisé</li>
+                    <li>✅ Accès à l’espace bien-être</li>
+                </ul>
+                <a href="@Url.Action("FormulaireAbonnement", "Abonnement", new { type = "Annuel" })" class="btn btn-warning btn-block">
+                    S'abonner
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <!-- Tableau comparatif -->
+    <div class="text-center">
+        <h3 class="fw-bold">📊 Comparatif des Offres</h3>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>Avantages</th>
+                    <th>Mensuel</th>
+                    <th>Trimestriel</th>
+                    <th>Annuel</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Accès illimité</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Cours collectifs inclus</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Coaching personnalisé</td>
+                    <td>❌</td>
+                    <td>✅ (2 séances)</td>
+                    <td>✅ (complet)</td>
+                </tr>
+                <tr>
+                    <td>Accès à l’espace bien-être</td>
+                    <td>❌</td>
+                    <td>❌</td>
+                    <td>✅</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr class="my-5">
+
+    <!-- Bouton vers l'inscription -->
+    <div class="text-center">
+        <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-warning btn-lg d-block mt-3">
+            📌 Je m'inscris maintenant
+        </a>
+    </div>
+</div>

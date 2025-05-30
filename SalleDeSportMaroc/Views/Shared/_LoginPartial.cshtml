@@ -1,0 +1,36 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using SalleDeSportMaroc.Models 
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item">
+            <a class="nav-link text-white" asp-area="Identity" asp-page="/Account/Manage/Index" title="Gérer votre compte">
+                <i class="fa-solid fa-user"></i> @UserManager.GetUserName(User)
+            </a>
+        </li>
+        <li class="nav-item">
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" method="post">
+                <button type="submit" class="btn btn-outline-light">
+                    <i class="fa-solid fa-sign-out-alt"></i> Déconnexion
+                </button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="btn btn-light me-2" asp-area="Identity" asp-page="/Account/Register">
+                <i class="fa-solid fa-user-plus"></i> Inscription
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-warning" asp-area="Identity" asp-page="/Account/Login">
+                <i class="fa-solid fa-sign-in-alt"></i> Connexion
+            </a>
+        </li>
+    }
+</ul>

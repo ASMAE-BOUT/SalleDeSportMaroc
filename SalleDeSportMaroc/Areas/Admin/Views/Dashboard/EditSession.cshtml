@@ -1,0 +1,52 @@
+﻿@model SalleDeSportMaroc.Areas.Admin.Controllers.EditSessionViewModel
+
+@{
+    ViewData["Title"] = "Modifier une Séance";
+}
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h2 class="fw-bold text-dark">✏️ Modifier une Séance</h2>
+        <p class="text-muted">Modifiez les informations de la séance.</p>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm p-4">
+                <form asp-action="EditSession" method="post">
+                    <input type="hidden" asp-for="Id" />
+
+                    <div class="mb-3">
+                        <label asp-for="Activity" class="form-label">Activité</label>
+                        <input asp-for="Activity" class="form-control" required />
+                        <span asp-validation-for="Activity" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Date" class="form-label">Date</label>
+                        <input asp-for="Date" type="date" class="form-control" required />
+                        <span asp-validation-for="Date" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Time" class="form-label">Heure</label>
+                        <input asp-for="Time" type="text" class="form-control" placeholder="HH:mm" required />
+                        <span asp-validation-for="Time" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Coach" class="form-label">Coach</label>
+                        <input asp-for="Coach" class="form-control" required />
+                        <span asp-validation-for="Coach" class="text-danger"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-warning w-100">Enregistrer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

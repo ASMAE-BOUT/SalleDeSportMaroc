@@ -1,0 +1,50 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Profil";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+    // Layout = "~/Areas/Identity/Pages/_Layout.cshtml";
+}
+
+@* <h3>@ViewData["Title"]</h3> *@
+@* <h3>Gérer votre compte</h3>
+<p>Modifier les paramètres de votre compte</p> *@
+<partial name="_StatusMessage" for="StatusMessage" />
+<div class="row">
+    <div class="col-md-6">
+        <form id="profile-form" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div class="form-floating mb-3">
+                <input asp-for="Username" class="form-control" placeholder="Veuillez choisir votre nom d'utilisateur." disabled />
+                <label asp-for="Username" class="form-label">Nom d'utilisateur</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.PhoneNumber" class="form-control" placeholder="Veuillez entrer votre numéro de téléphone." />
+                <label asp-for="Input.PhoneNumber" class="form-label">Numéro de téléphone</label>
+                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+            </div>
+            <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-dark-orange">Enregistrer</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    .btn-dark-orange {
+        background-color: #FF9900; /* Orange vif */
+        color: black; /* Texte noir */
+        border: none;
+        padding: 12px 20px; /* Padding accru pour un look audacieux */
+        border-radius: 8px; /* Coins arrondis */
+        font-weight: bold; /* Texte en gras pour l'accentuation */
+        transition: background-color 0.3s; /* Effet de survol fluide */
+    }
+
+        .btn-dark-orange:hover {
+            background-color: #E64A19; /* Orange légèrement plus clair au survol */
+            color: black; /* Maintenir le texte noir */
+        }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,49 @@
+﻿<div class="container mt-5">
+    <div class="text-center">
+        <h2 class="fw-bold text-dark">📅 Gérer les Séances chez MarocActive</h2>
+        <p class="text-muted">Ajoutez, modifiez ou supprimez des séances d’activités sportives.</p>
+    </div>
+
+    <div class="d-flex justify-content-end mb-3">
+        <a class="btn btn-warning mb-3" asp-action="CreateSession">
+            <i class="fa fa-plus"></i> Ajouter une Séance
+        </a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Activité</th>
+                        <th>Date</th>
+                        <th>Heure</th>
+                        <th>Coach</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var session in Model)
+                    {
+                        <tr>
+                            <td>@session.Activity</td>
+                            <td>@session.Date.ToString("yyyy-MM-dd")</td>
+                            <td>@session.Time</td>
+                            <td>@session.Coach</td>
+                            <td>
+                                <a class="btn btn-warning btn-sm" asp-action="EditSession" asp-route-id="@session.Id">
+                                    Modifier
+                                </a>
+                                <form asp-action="DeleteSession" asp-route-id="@session.Id" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette séance ?');">
+                                        Supprimer
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+﻿@page
+@model SalleDeSportMaroc.Areas.Identity.Pages.Account.LogoutModel
+@{
+    ViewData["Title"] = "Déconnexion";
+}
+
+<h1>@ViewData["Title"]</h1>
+<p>Vous êtes sur le point de vous déconnecter. Voulez-vous continuer ?</p>
+<form method="post">
+    <button type="submit" class="btn btn-dark-orange">Se déconnecter</button>
+    <a asp-page="/Index" class="btn btn-secondary">Annuler</a>
+</form>
+
+<style>
+    .btn-dark-orange {
+        background-color: #FF9900; /* Orange vif */
+        color: black; /* Texte noir */
+        border: none;
+        padding: 12px 20px; /* Padding accru pour un look audacieux */
+        border-radius: 8px; /* Coins arrondis */
+        font-weight: bold; /* Texte en gras pour l'accentuation */
+        transition: background-color 0.3s; /* Effet de survol fluide */
+        margin-right: 10px; /* Espacement entre les boutons */
+    }
+
+        .btn-dark-orange:hover {
+            background-color: #E64A19; /* Orange légèrement plus clair au survol */
+            color: black; /* Maintenir le texte noir */
+        }
+
+    .btn-secondary {
+        background-color: #6c757d; /* Gris pour le bouton Annuler */
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268; /* Gris plus foncé au survol */
+            color: white;
+        }
+</style>

@@ -1,0 +1,49 @@
+﻿<div class="container mt-5">
+    <div class="text-center">
+        <h2 class="fw-bold text-dark">🚫 Gérer les Absences chez MarocActive</h2>
+        <p class="text-muted">Suivez les absences des membres et des coachs.</p>
+    </div>
+
+    <div class="d-flex justify-content-end mb-3">
+        <a class="btn btn-warning" asp-action="CreateAbsence">
+            <i class="fa fa-plus"></i> Ajouter une Absence
+        </a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Nom</th>
+                        <th>Type</th>
+                        <th>Date</th>
+                        <th>Raison</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var absence in Model)
+                    {
+                        <tr>
+                            <td>@absence.Name</td>
+                            <td>@absence.Type</td>
+                            <td>@absence.Date.ToString("yyyy-MM-dd")</td>
+                            <td>@absence.Reason</td>
+                            <td>
+                                <a class="btn btn-warning btn-sm" asp-action="EditAbsence" asp-route-id="@absence.Id">
+                                    Modifier
+                                </a>
+                                <form asp-action="DeleteAbsence" asp-route-id="@absence.Id" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette absence ?');">
+                                        Supprimer
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

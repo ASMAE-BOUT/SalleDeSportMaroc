@@ -1,0 +1,21 @@
+﻿@model IEnumerable<SalleDeSportMaroc.Models.Coach>
+
+<h2 class="text-center mt-4">Notre Équipe de Coachs à Rabat </h2>
+
+<a asp-action="Create" class="btn btn-warning mb-3">Ajouter un Coach</a>
+
+<div class="row">
+    @foreach (var coach in Model)
+    {
+        <div class="col-md-3">
+            <div class="card mb-4 shadow-sm">
+                <img src="@coach.PhotoUrl" class="card-img-top" alt="Photo de @coach.Nom" style="height: 250px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">@coach.Nom</h5>
+                    <p class="card-text"><strong>@coach.Specialite</strong></p>
+                    <a asp-action="Details" asp-route-id="@coach.Id" class="btn btn-primary">Détails</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

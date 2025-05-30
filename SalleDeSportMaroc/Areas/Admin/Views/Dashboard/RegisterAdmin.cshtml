@@ -1,0 +1,53 @@
+﻿@model SalleDeSportMaroc.Areas.Admin.Controllers.RegisterAdminViewModel
+
+@{
+    ViewData["Title"] = "Espace Admin - Inscription";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="fw-bold text-dark text-center">🖥️ Inscription Admin</h2>
+            <p class="text-muted text-center">Créez un compte pour gérer le centre sportif MarocActive.</p>
+
+            <div class="card shadow p-4">
+                <form asp-action="RegisterAdmin" method="post">
+                    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label fw-bold">📧 Adresse e-mail</label>
+                        <input asp-for="Email" class="form-control form-control-lg" required />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label fw-bold">🔑 Mot de passe</label>
+                        <input asp-for="Password" type="password" class="form-control form-control-lg" required />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="ConfirmPassword" class="form-label fw-bold">🔒 Confirmer le mot de passe</label>
+                        <input asp-for="ConfirmPassword" type="password" class="form-control form-control-lg" required />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-warning w-100 fw-bold py-2">
+                        🚀 S'inscrire
+                    </button>
+                </form>
+            </div>
+
+            <div class="text-center mt-4">
+                <p class="text-muted">Déjà un compte ?</p>
+                <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-outline-secondary w-100">
+                    🔑 Se connecter
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

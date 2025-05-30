@@ -1,0 +1,22 @@
+﻿@model SalleDeSportMaroc.Models.Abonnement
+@{
+    ViewData["Title"] = "Souscrire à un abonnement";
+}
+
+<h2>Souscrire à un abonnement</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Type" class="control-label"></label>
+        <input asp-for="Type" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Prix" class="control-label"></label>
+        <input asp-for="Prix" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="DureeMois" class="control-label"></label>
+        <input asp-for="DureeMois" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Valider</button>
+</form>

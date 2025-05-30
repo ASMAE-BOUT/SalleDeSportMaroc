@@ -1,0 +1,44 @@
+@inject SignInManager<ApplicationUser> SignInManager
+@{
+    var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
+}
+<ul class="nav nav-pills flex-column">
+    <li class="nav-item"><a class="nav-link @ManageNavPages.IndexNavClass(ViewContext)" id="profile" asp-page="./Index">Profil</a></li>
+    <li class="nav-item"><a class="nav-link @ManageNavPages.EmailNavClass(ViewContext)" id="email" asp-page="./Email">E-mail</a></li>
+    <li class="nav-item"><a class="nav-link @ManageNavPages.ChangePasswordNavClass(ViewContext)" id="change-password" asp-page="./ChangePassword">Mot de passe</a></li>
+    @if (hasExternalLogins)
+    {
+        <li id="external-logins" class="nav-item"><a id="external-login" class="nav-link @ManageNavPages.ExternalLoginsNavClass(ViewContext)" asp-page="./ExternalLogins">Connexions externes</a></li>
+    }
+    <li class="nav-item"><a class="nav-link @ManageNavPages.TwoFactorAuthenticationNavClass(ViewContext)" id="two-factor" asp-page="./TwoFactorAuthentication">Authentification à deux facteurs</a></li>
+    <li class="nav-item"><a class="nav-link @ManageNavPages.PersonalDataNavClass(ViewContext)" id="personal-data" asp-page="./PersonalData">Données personnelles</a></li>
+</ul>
+
+<style>
+    :root {
+        --primary-color: #1A1A1A; /* Noir plus clair */
+        --secondary-color: #FF9900; /* Orange vif */
+    }
+
+    .nav-link {
+        color: var(--primary-color); /* Bleu nuit pour le texte par défaut */
+        background-color: transparent !important; /* Pas de fond par défaut, !important pour écraser Bootstrap */
+        padding: 8px 16px; /* Ajustement pour correspondre au style de navigation */
+        transition: color 0.3s, background-color 0.3s; /* Transition fluide */
+    }
+
+        .nav-link:hover {
+            color: var(--secondary-color); /* Orange vif au survol */
+            background-color: transparent !important; /* Pas de fond au survol */
+        }
+
+    .nav-pills .nav-link.active {
+        color: black !important; /* Texte noir pour l'élément actif */
+        background-color: var(--secondary-color) !important; /* Orange vif pour l'élément actif, !important pour écraser Bootstrap */
+        font-weight: bold; /* Mettre en gras l'élément actif */
+    }
+
+    .nav-item {
+        margin-bottom: 5px; /* Espacement entre les éléments */
+    }
+</style>

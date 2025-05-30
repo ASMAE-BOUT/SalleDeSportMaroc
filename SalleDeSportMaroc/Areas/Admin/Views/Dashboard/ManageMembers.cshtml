@@ -1,0 +1,45 @@
+﻿<div class="container mt-5">
+    <div class="text-center">
+        <h2 class="fw-bold text-dark">👥 Gérer les Membres de MarocActive</h2>
+        <p class="text-muted">Consultez et gérez les informations des membres inscrits.</p>
+    </div>
+
+    <div class="d-flex justify-content-end mb-3">
+        <a class="btn btn-warning mb-3" asp-action="CreateMember">
+            <i class="fa fa-user-plus"></i> Ajouter un Membre
+        </a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var member in Model)
+                    {
+                        <tr>
+                            <td>@member.UserName</td>
+                            <td>@member.Email</td>
+                            <td>
+                                <a class="btn btn-warning btn-sm" asp-action="EditMember" asp-route-id="@member.Id">
+                                    Modifier
+                                </a>
+                                <form asp-action="DeleteMember" asp-route-id="@member.Id" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr ?');">
+                                        Supprimer
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

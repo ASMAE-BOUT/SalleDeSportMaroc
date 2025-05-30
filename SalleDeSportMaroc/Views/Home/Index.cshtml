@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Accueil";
+}
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h2 class="fw-bold">🏋️‍♂️ À Propos de MarocActive à Rabat</h2>
+    </div>
+
+    <div class="row align-items-center mt-4">
+        <!-- Image 1 -->
+        <div class="col-md-6">
+            <img src="/images/salle-de-sport-interieur.jpg" class="img-fluid rounded shadow" alt="MarocActive Rabat">
+        </div>
+        <!-- Texte -->
+        <div class="col-md-6">
+            <p>
+                Située au cœur de Rabat, MarocActive offre un **espace moderne et équipé** pour répondre à tous vos besoins en **fitness, musculation et bien-être**.
+                Que vous soyez débutant ou athlète confirmé, nous avons tout ce qu'il vous faut pour atteindre vos objectifs !
+            </p>
+            <ul class="list-unstyled">
+                <li><strong>🏋️‍♂️ Musculation & Cardio :</strong> équipements modernes et performants.</li>
+                <li><strong>🧘‍♀️ Cours collectifs :</strong> Zumba, Yoga, HIIT, CrossFit.</li>
+                <li><strong>🎯 Coaching personnalisé :</strong> un suivi adapté à vos objectifs.</li>
+                <li><strong>💆‍♂️ Espace bien-être :</strong> sauna et massage pour la récupération.</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <!-- Deuxième section avec images et texte -->
+    <div class="row align-items-center mt-4">
+        <!-- Texte -->
+        <div class="col-md-6">
+            <h3 class="fw-bold">🎯 Un Accompagnement de Qualité</h3>
+            <p>
+                Nos **coachs certifiés** vous accompagnent tout au long de votre parcours pour maximiser vos résultats.
+                Vous pouvez bénéficier d'un programme **100% personnalisé** pour atteindre vos objectifs efficacement.
+            </p>
+            <p>
+                Nous mettons à votre disposition un **espace innovant**, des **cours interactifs**, et une **communauté dynamique** pour vous motiver jour après jour !
+            </p>
+        </div>
+        <!-- Image 2 -->
+        <div class="col-md-6">
+            <img src="/images/coaching-personnalise.jpg" class="img-fluid rounded shadow" alt="Coaching personnalisé">
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <!-- Abonnements -->
+    <div class="text-center mt-4">
+        <h3 class="fw-bold">💰 Des Formules d'Abonnement Flexibles</h3>
+        <p>Nous proposons plusieurs formules adaptées à tous les budgets :</p>
+        <ul class="list-unstyled text-center">
+            <li>💳 <strong>Abonnement Mensuel :</strong> 250 MAD</li>
+            <li>💎 <strong>Abonnement Trimestriel :</strong> 700 MAD</li>
+            <li>🏆 <strong>Abonnement Annuel :</strong> 2500 MAD</li>
+        </ul>
+        <a class="btn btn-warning btn-lg me-3" asp-controller="Abonnement" asp-action="Index">
+            📌 Découvrir nos offres
+        </a>
+        <a class="btn btn-warning btn-lg" asp-controller="Compte" asp-action="Register">
+            📝 S'inscrire maintenant
+        </a>
+    </div>
+</div>

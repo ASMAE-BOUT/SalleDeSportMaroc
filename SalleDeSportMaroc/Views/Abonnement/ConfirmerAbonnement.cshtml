@@ -1,0 +1,11 @@
+﻿@model SalleDeSportMaroc.Models.Abonnement
+@{
+    ViewData["Title"] = "Confirmation d'Abonnement";
+}
+
+<div class="container text-center mt-5">
+    <h2>🎉 Félicitations !</h2>
+    <p>@ViewBag.Message</p>
+    <a href="@Url.Action("Index", "Home")" class="btn btn-warning">Retour à l'accueil</a>
+</div>
+
