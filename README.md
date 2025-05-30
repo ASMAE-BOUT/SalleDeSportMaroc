@@ -1,5 +1,5 @@
 🏋️‍♂️ MarocActive - Centre Sportif de Rabat
-🌟 Description (Français)
+
 MarocActive est une application web moderne conçue pour gérer un centre sportif à Rabat 🏙️. Elle offre une plateforme intuitive permettant aux utilisateurs de découvrir et de s'inscrire à des cours collectifs 📅, consulter les profils des coachs 🧑‍🏫, et gérer leurs abonnements 💳. L'objectif principal est de proposer une expérience utilisateur fluide et contemporaine tout en facilitant la gestion des cours et des coachs pour les administrateurs.
 
 🎯 Fonctionnalités Principales
