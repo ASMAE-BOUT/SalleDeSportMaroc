@@ -140,4 +140,12 @@ Les contributions sont les bienvenues ! Pour contribuer :
 🎨 Améliorer l’interface avec des images pour les cours et des profils plus détaillés pour les coachs.
 
 
+![Capture d'écran 2025-05-30 164903](https://github.com/user-attachments/assets/941b70d5-6842-4505-b8d1-50c3280f898e)
+
+
+![Capture d'écran 2025-05-30 164951](https://github.com/user-attachments/assets/421ba5c1-be8b-40d6-99db-d3860e314e12)
+
+
+![Capture d'écran 2025-05-30 165120](https://github.com/user-attachments/assets/eb17ea27-cf5b-41d7-aa00-fa7b376154b6)
+
 
